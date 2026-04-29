@@ -32,6 +32,34 @@ TAT-QA / FinQA data standardization
 -> Citation Consistency / Error Delta / Badcase Audit
 ```
 
+## Current Result Summary
+
+Main eval size: 400 held-out samples.
+
+Error metrics are lower-is-better. Other metrics are higher-is-better.
+
+| model | exact_match | numeric_exact_match | faithfulness_rate | citation_precision | citation_consistency_score | wrong_citation_rate | fabricated_number_rate | calculation_error_rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Base | 0.1975 | 0.0504 | 0.1675 | 0.2487 | 0.2202 | 0.7600 | 0.6000 | 0.6300 |
+| SFT | 0.3300 | 0.1727 | 0.4200 | 0.8950 | 0.6331 | 0.0825 | 0.5350 | 0.5750 |
+| DPO v1 s500 | 0.2975 | 0.1475 | 0.4000 | 0.9450 | 0.6225 | 0.0125 | 0.5625 | 0.5925 |
+| DPO v2 s100 | 0.3175 | 0.1691 | 0.4075 | 0.9525 | 0.6356 | 0.0350 | 0.5600 | 0.5775 |
+| DPO v2 s50 | 0.3275 | 0.1763 | 0.4175 | 0.9575 | 0.6425 | 0.0300 | 0.5525 | 0.5725 |
+| DPO v3 guarded s100 | 0.3275 | 0.1727 | 0.4125 | 0.9450 | 0.6369 | 0.0300 | 0.5500 | 0.5750 |
+
+Current model selection:
+
+```text
+Formal baseline: SFT
+Best DPO candidate: DPO v2 checkpoint-50
+DPO v3 status: experimental, not promoted
+```
+
+The core finding is a post-training tradeoff: DPO can improve citation behavior
+and reduce wrong citations, but it can also introduce numeric scale regressions
+and answerability regressions. The v4 plan therefore focuses on targeted
+anti-regression preference data instead of longer generic DPO training.
+
 ## Current Scope
 
 In scope:
@@ -145,3 +173,13 @@ FinanceBench is used only as an external audit set in v1 and is not used for
 training.
 
 See `docs/a100_runbook.md` for the GPU execution order.
+
+## Resume / Interview Docs
+
+```text
+docs/project_status_20260429.md
+docs/resume_project_brief.md
+docs/v4_targeted_plan.md
+reports/dpo_model_selection_report.md
+reports/dpo_v3_posthoc_audit_report.md
+```
