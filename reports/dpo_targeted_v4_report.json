@@ -1,0 +1,187 @@
+{
+  "input_train": "data\\unified\\train_unified.jsonl",
+  "output": "data\\dpo\\dpo_targeted_v4.jsonl",
+  "audit_output": "results\\dpo_targeted_v4_pair_audit_120.jsonl",
+  "seed": 45,
+  "rows": 680,
+  "requested_buckets": {
+    "numeric_scale_guard": 240,
+    "protect_correct_guard": 160,
+    "unanswerable_refusal_guard": 120,
+    "citation_repair_guard": 160
+  },
+  "actual_buckets": {
+    "citation_repair_guard": 160,
+    "numeric_scale_guard": 240,
+    "unanswerable_refusal_guard": 120,
+    "protect_correct_guard": 160
+  },
+  "candidate_counts": {
+    "numeric_scale_guard": 13030,
+    "protect_correct_guard": 4906,
+    "unanswerable_refusal_guard": 188,
+    "citation_repair_guard": 2357
+  },
+  "quota_pass": {
+    "numeric_scale_guard": true,
+    "protect_correct_guard": true,
+    "unanswerable_refusal_guard": true,
+    "citation_repair_guard": true
+  },
+  "source": {
+    "v4_citation_repair_guard": 160,
+    "v4_numeric_scale_guard": 240,
+    "v4_unanswerable_refusal_guard": 120,
+    "v4_protect_correct_guard": 160
+  },
+  "reject_type": {
+    "wrong_citation": 160,
+    "fabricated_number": 254,
+    "forced_answer": 120,
+    "calculation_error": 120,
+    "unsupported_claim": 26
+  },
+  "difficulty": {
+    "medium": 160,
+    "hard": 520
+  },
+  "answerability_type": {
+    "answerable": 560,
+    "unanswerable": 120
+  },
+  "answer_type": {
+    "span": 188,
+    "number": 318,
+    "unanswerable": 120,
+    "multi_span": 54
+  },
+  "numeric_guard_variant": {
+    "large_scale_shift": 40,
+    "percent_fraction_shift": 40,
+    "decimal_scale_shift": 40,
+    "last_digit_drift": 40,
+    "sign_flip": 40,
+    "rounding_loss": 40
+  },
+  "quality": {
+    "rows": 680,
+    "invalid_rows": 0,
+    "sample_invalid": [],
+    "reject_type": {
+      "wrong_citation": 160,
+      "fabricated_number": 254,
+      "forced_answer": 120,
+      "calculation_error": 120,
+      "unsupported_claim": 26
+    },
+    "source": {
+      "v4_citation_repair_guard": 160,
+      "v4_numeric_scale_guard": 240,
+      "v4_unanswerable_refusal_guard": 120,
+      "v4_protect_correct_guard": 160
+    },
+    "difficulty": {
+      "medium": 160,
+      "hard": 520
+    },
+    "answerability_type": {
+      "answerable": 560,
+      "unanswerable": 120
+    },
+    "reject_type_distribution": {
+      "wrong_citation": 160,
+      "fabricated_number": 254,
+      "forced_answer": 120,
+      "calculation_error": 120,
+      "unsupported_claim": 26
+    },
+    "source_distribution": {
+      "v4_citation_repair_guard": 160,
+      "v4_numeric_scale_guard": 240,
+      "v4_unanswerable_refusal_guard": 120,
+      "v4_protect_correct_guard": 160
+    },
+    "difficulty_distribution": {
+      "medium": 160,
+      "hard": 520
+    },
+    "answerability_distribution": {
+      "answerable": 560,
+      "unanswerable": 120
+    },
+    "chosen_avg_len": 422.41911764705884,
+    "rejected_avg_len": 421.58088235294116,
+    "length_ratio": 1.0019883142931891,
+    "length_bias_report": {
+      "chosen_avg_len": 422.41911764705884,
+      "rejected_avg_len": 421.58088235294116,
+      "length_ratio": 1.0019883142931891,
+      "length_ratio_ok": true
+    }
+  },
+  "difficulty_report": {
+    "rows": 680,
+    "reject_type": {
+      "wrong_citation": 160,
+      "fabricated_number": 254,
+      "forced_answer": 120,
+      "calculation_error": 120,
+      "unsupported_claim": 26
+    },
+    "source": {
+      "v4_citation_repair_guard": 160,
+      "v4_numeric_scale_guard": 240,
+      "v4_unanswerable_refusal_guard": 120,
+      "v4_protect_correct_guard": 160
+    },
+    "difficulty": {
+      "medium": 160,
+      "hard": 520
+    },
+    "answerability_type": {
+      "answerable": 560,
+      "unanswerable": 120
+    },
+    "hard_rejected_rate": 0.7647058823529411,
+    "numeric_wrongcitation_unsupported_rate": 0.8235294117647058,
+    "format_error_rate": 0.0,
+    "over_refusal_generic_rate": 0.0,
+    "forced_answer_rate": 0.17647058823529413,
+    "length_bias_report": {
+      "chosen_avg_len": 422.41911764705884,
+      "rejected_avg_len": 421.58088235294116,
+      "length_ratio": 1.0019883142931891,
+      "length_ratio_ok": true
+    },
+    "passes_planned_constraints": {
+      "format_error_le_10pct": true,
+      "over_refusal_generic_ge_15pct": false,
+      "numeric_wrongcitation_unsupported_ge_50pct": true,
+      "hard_rejected_ge_25pct": true,
+      "length_ratio_0_5_to_2_0": true
+    }
+  },
+  "leakage_guard": {
+    "uses_eval_rows": false,
+    "train_source_split": {
+      "train": 5000
+    },
+    "post_dpo_eval_failures_used_as_training_rows": false,
+    "post_dpo_eval_failures_used_as_taxonomy_only": true
+  },
+  "citation_repair_guard": {
+    "numeric_answer_fallback_rows": 0,
+    "note": "Citation repair is selected from non-numeric rows first; numeric fallback is only used if quota cannot be met."
+  },
+  "formal_gate": {
+    "status": "pending_manual_pair_audit",
+    "gate_pass": false,
+    "reason": "v4 adds fresh train-split targeted guard pairs; audit sample must be reviewed before formal DPO training is accepted."
+  },
+  "notes": [
+    "Built fresh train-split v4 pairs instead of directly training on held-out badcases.",
+    "Separated numeric scale, protect-correct, unanswerable refusal, and citation repair buckets.",
+    "Designed for short beta=0.05 checkpoint sweeps at 50/75/100 steps."
+  ],
+  "gate_ready_for_manual_review": true
+}

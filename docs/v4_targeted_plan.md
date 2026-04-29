@@ -143,6 +143,35 @@ total: 680
 The total intentionally stays close to v2/v3 scale to avoid making the DPO
 objective too different from prior runs.
 
+Implemented local builder:
+
+```bash
+python scripts/build_dpo_targeted_v4.py
+```
+
+Expected artifacts:
+
+```text
+data/dpo/dpo_targeted_v4.jsonl
+reports/dpo_targeted_v4_report.json
+results/dpo_targeted_v4_pair_audit_120.jsonl
+```
+
+The generated v4 pool must keep `quality.invalid_rows=0`, all four bucket
+quotas filled, and `leakage_guard.train_source_split={"train": 5000}` before
+being used for a candidate run.
+
+Current reviewed audit artifacts:
+
+```text
+results/dpo_targeted_v4_pair_audit_120.reviewed.jsonl
+reports/dpo_targeted_v4_audit_report.json
+```
+
+The current v4 data-audit gate passes with 120/120 reviewed pairs marked
+`ok_chosen_better`. This gate approves v4 for experimental candidate training,
+not for model promotion.
+
 ## Training Plan
 
 Use short checkpoint sweeps only:
@@ -154,6 +183,21 @@ MAX_STEPS=100
 BETA=0.05
 LR=1e-5
 ```
+
+Candidate A100 command:
+
+```bash
+MODEL_PATH=$MODEL_PATH \
+SFT_ADAPTER_PATH=results/sft/qwen25_7b_finground_sft \
+  bash scripts/run_dpo_v4_targeted_sweep_a10040.sh
+```
+
+This script trains an experimental v4 candidate with `MAX_STEPS=100`,
+`SAVE_STEPS=25`, then evaluates checkpoints 50, 75, and 100. It sets
+`ALLOW_UNREVIEWED_DPO=1` only to bypass the legacy v1 audit gate inside
+`run_dpo_a10040.sh`; it separately requires
+`reports/dpo_targeted_v4_audit_report.json` to have `gate_pass=true` unless
+`ALLOW_UNREVIEWED_V4_DPO=1` is explicitly set for smoke/debug.
 
 Stop if any of these regress materially versus DPO v2 checkpoint-50:
 
@@ -179,4 +223,3 @@ posthoc high-severity regression count < dpo_v2_s50
 
 V4 can replace SFT only if a manual audit confirms that DPO regressions are not
 high severity. Current evidence does not support replacing SFT.
-

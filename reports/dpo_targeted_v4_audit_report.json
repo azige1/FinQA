@@ -1,0 +1,73 @@
+{
+  "input_dpo": "data/dpo/dpo_targeted_v4.jsonl",
+  "reviewed_output": "results/dpo_targeted_v4_pair_audit_120.reviewed.jsonl",
+  "rows": 120,
+  "reviewed_rows": 120,
+  "chosen_better": 120,
+  "is_chosen_better_rate": 1.0,
+  "issue": {
+    "ok_chosen_better": 120
+  },
+  "bucket": {
+    "citation_repair_guard": 30,
+    "numeric_scale_guard": 30,
+    "protect_correct_guard": 30,
+    "unanswerable_refusal_guard": 30
+  },
+  "by_bucket": {
+    "citation_repair_guard": {
+      "rows": 30,
+      "reviewed_rows": 30,
+      "chosen_better": 30,
+      "is_chosen_better_rate": 1.0,
+      "issue": {
+        "ok_chosen_better": 30
+      }
+    },
+    "numeric_scale_guard": {
+      "rows": 30,
+      "reviewed_rows": 30,
+      "chosen_better": 30,
+      "is_chosen_better_rate": 1.0,
+      "issue": {
+        "ok_chosen_better": 30
+      }
+    },
+    "protect_correct_guard": {
+      "rows": 30,
+      "reviewed_rows": 30,
+      "chosen_better": 30,
+      "is_chosen_better_rate": 1.0,
+      "issue": {
+        "ok_chosen_better": 30
+      }
+    },
+    "unanswerable_refusal_guard": {
+      "rows": 30,
+      "reviewed_rows": 30,
+      "chosen_better": 30,
+      "is_chosen_better_rate": 1.0,
+      "issue": {
+        "ok_chosen_better": 30
+      }
+    }
+  },
+  "retained_prior_review_rows": 96,
+  "supplemental_review_rows": 24,
+  "superseded_annotation": "results/dpo_targeted_v4_pair_audit_120.annotated_truncated_prompt.jsonl",
+  "builder_repairs_applied": [
+    "Full prompt is included in audit samples instead of a 1400-character truncation.",
+    "Chosen evidence is locally repaired to cite prompt contexts that contain the answer or source numbers.",
+    "Protect-correct rows with numeric answers use wrong-number negatives instead of weak truncations.",
+    "Citation-repair wrong chunks are filtered out if they contain the answer text or answer numbers."
+  ],
+  "gate": {
+    "enough_reviewed": true,
+    "is_chosen_better_ge_85pct": true,
+    "invalid_pair_rate_le_10pct": true,
+    "ambiguous_pair_rate_le_10pct": true,
+    "chosen_also_bad_rate_le_10pct": true
+  },
+  "notes": "This data-audit gate only approves v4 for experimental candidate training. Model selection still depends on held-out eval and posthoc regression audit.",
+  "gate_pass": true
+}

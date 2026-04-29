@@ -26,6 +26,12 @@ PAIR_SOURCES = {
     "hard_negative",
     "numeric_corruption",
     "wrong_citation_corruption",
+    "v3_numeric_precision_guard",
+    "v3_unanswerable_guard",
+    "v4_numeric_scale_guard",
+    "v4_protect_correct_guard",
+    "v4_unanswerable_refusal_guard",
+    "v4_citation_repair_guard",
 }
 PAIR_DIFFICULTIES = {"easy", "medium", "hard"}
 ANSWERABILITY_TYPES = {"answerable", "unanswerable", "unknown"}

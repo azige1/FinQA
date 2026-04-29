@@ -1,0 +1,79 @@
+{
+  "input_annotation": "results\\dpo_targeted_v4_pair_audit_120.annotated_truncated_prompt.jsonl",
+  "rows": 120,
+  "reviewed_rows": 116,
+  "is_chosen_better_rate_including_reviewed": 0.9827586206896551,
+  "is_chosen_better": {
+    "True": 114,
+    "False": 2,
+    "None": 4
+  },
+  "issue": {
+    "ok_chosen_better": 106,
+    "rejected_better": 2,
+    "invalid_pair_drop": 4,
+    "chosen_better_but_citation_issue": 8
+  },
+  "bucket": {
+    "citation_repair_guard": 30,
+    "numeric_scale_guard": 30,
+    "protect_correct_guard": 30,
+    "unanswerable_refusal_guard": 30
+  },
+  "by_bucket": {
+    "citation_repair_guard": {
+      "rows": 30,
+      "reviewed_rows": 26,
+      "is_chosen_better_rate": 0.9230769230769231,
+      "issue": {
+        "ok_chosen_better": 24,
+        "rejected_better": 2,
+        "invalid_pair_drop": 4
+      }
+    },
+    "numeric_scale_guard": {
+      "rows": 30,
+      "reviewed_rows": 30,
+      "is_chosen_better_rate": 1.0,
+      "issue": {
+        "ok_chosen_better": 28,
+        "chosen_better_but_citation_issue": 2
+      }
+    },
+    "protect_correct_guard": {
+      "rows": 30,
+      "reviewed_rows": 30,
+      "is_chosen_better_rate": 1.0,
+      "issue": {
+        "ok_chosen_better": 24,
+        "chosen_better_but_citation_issue": 6
+      }
+    },
+    "unanswerable_refusal_guard": {
+      "rows": 30,
+      "reviewed_rows": 30,
+      "is_chosen_better_rate": 1.0,
+      "issue": {
+        "ok_chosen_better": 30
+      }
+    }
+  },
+  "truncation_warning": {
+    "original_audit_prompt_chars": 1400,
+    "problem_rows": 14,
+    "problem_rows_where_full_prompt_contains_chosen_evidence_but_annotation_prompt_did_not": 10,
+    "affected_ids": [
+      "tatqa_train_3cba77529018cc38b01d017ca6b3a758_v4_citation_repair_wrong_chunk",
+      "tatqa_train_29dcc012d1efd250d19bb146942a208e_v4_citation_repair_wrong_chunk",
+      "tatqa_train_36307a3f7979bf74da9268d76b61b205_v4_citation_repair_wrong_chunk",
+      "tatqa_train_951493565d979955c9d2b64935968c0b_v4_citation_repair_wrong_chunk",
+      "tatqa_train_c5dd25372fb18668cc120ae6fe4adbff_v4_citation_repair_wrong_chunk",
+      "tatqa_train_3b11abf337edaed357c1c633a6665263_v4_numeric_decimal_scale_shift",
+      "tatqa_train_67b0f99070e92a83d3417fff9fcc61d1_v4_protect_correct_truncated_answer_with_correct_citation",
+      "tatqa_train_adfc652018f8560af945f804f8557ab8_v4_protect_correct_truncated_answer_with_correct_citation",
+      "tatqa_train_bcca772e79c83763b7aab835a8006820_v4_protect_correct_truncated_answer_with_correct_citation",
+      "tatqa_train_73790b61ba75ec12bb7e44e40d8774c2_v4_protect_correct_truncated_answer_with_correct_citation"
+    ],
+    "conclusion": "Use this annotation as a preliminary signal only. Re-audit with full prompts before formal gate."
+  }
+}
