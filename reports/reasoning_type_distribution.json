@@ -1,0 +1,9 @@
+{
+  "rows": 5900,
+  "reasoning_type": {
+    "calculation": 3146,
+    "lookup": 1916,
+    "multi_hop": 564,
+    "comparison": 274
+  }
+}

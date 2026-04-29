@@ -1,0 +1,172 @@
+{
+  "sft_train": {
+    "rows": 5000,
+    "dataset": {
+      "FinQA": 2112,
+      "TAT-QA": 2794,
+      "SyntheticUnanswerable": 94
+    },
+    "grounding_type": {
+      "direct_grounded": 3745,
+      "numeric_grounded": 919,
+      "unanswerable": 94,
+      "calculation_hard": 242
+    },
+    "answer_type": {
+      "number": 2469,
+      "span": 1893,
+      "multi_span": 544,
+      "unanswerable": 94
+    },
+    "reasoning_type": {
+      "calculation": 2517,
+      "lookup": 1724,
+      "multi_hop": 511,
+      "comparison": 248
+    },
+    "prompt_length": {
+      "count": 5000,
+      "mean": 1970.6222,
+      "p50": 1572.5,
+      "p90": 3639,
+      "max": 6613
+    },
+    "context_length": {
+      "count": 5000,
+      "mean": 1970.6222,
+      "p50": 1572.5,
+      "p90": 3639,
+      "max": 6613
+    },
+    "answer_length": {
+      "count": 5000,
+      "mean": 26.05,
+      "p50": 8.0,
+      "p90": 68,
+      "max": 684
+    },
+    "evidence_quote_length": {
+      "count": 4906,
+      "mean": 162.57888300040767,
+      "p50": 192.5,
+      "p90": 300,
+      "max": 684
+    }
+  },
+  "sft_val": {
+    "rows": 500,
+    "dataset": {
+      "FinQA": 323,
+      "TAT-QA": 166,
+      "SyntheticUnanswerable": 11
+    },
+    "grounding_type": {
+      "direct_grounded": 402,
+      "numeric_grounded": 66,
+      "calculation_hard": 21,
+      "unanswerable": 11
+    },
+    "answer_type": {
+      "number": 343,
+      "span": 117,
+      "multi_span": 29,
+      "unanswerable": 11
+    },
+    "reasoning_type": {
+      "calculation": 349,
+      "lookup": 109,
+      "multi_hop": 27,
+      "comparison": 15
+    },
+    "prompt_length": {
+      "count": 500,
+      "mean": 1649.374,
+      "p50": 1272.5,
+      "p90": 3005,
+      "max": 6524
+    },
+    "context_length": {
+      "count": 500,
+      "mean": 1649.374,
+      "p50": 1272.5,
+      "p90": 3005,
+      "max": 6524
+    },
+    "answer_length": {
+      "count": 500,
+      "mean": 16.914,
+      "p50": 7.0,
+      "p90": 28,
+      "max": 261
+    },
+    "evidence_quote_length": {
+      "count": 489,
+      "mean": 211.23108384458078,
+      "p50": 300,
+      "p90": 300,
+      "max": 300
+    }
+  },
+  "eval": {
+    "rows": 400,
+    "dataset": {
+      "TAT-QA": 130,
+      "FinQA": 264,
+      "SyntheticUnanswerable": 6
+    },
+    "grounding_type": {
+      "numeric_grounded": 39,
+      "direct_grounded": 348,
+      "calculation_hard": 7,
+      "unanswerable": 6
+    },
+    "answer_type": {
+      "number": 278,
+      "multi_span": 26,
+      "span": 90,
+      "unanswerable": 6
+    },
+    "reasoning_type": {
+      "calculation": 280,
+      "multi_hop": 26,
+      "lookup": 83,
+      "comparison": 11
+    },
+    "prompt_length": {
+      "count": 400,
+      "mean": 1563.5975,
+      "p50": 1214.5,
+      "p90": 2719,
+      "max": 6531
+    },
+    "context_length": {
+      "count": 400,
+      "mean": 953.9875,
+      "p50": 639.0,
+      "p90": 1949,
+      "max": 8729
+    },
+    "answer_length": {
+      "count": 400,
+      "mean": 20.845,
+      "p50": 7.0,
+      "p90": 57,
+      "max": 353
+    },
+    "evidence_quote_length": {
+      "count": 394,
+      "mean": 212.73857868020303,
+      "p50": 300.0,
+      "p90": 300,
+      "max": 353
+    }
+  },
+  "diagnostics": {
+    "eval_vs_train_prompt_mean_ratio": 0.7934537122336286,
+    "eval_vs_train_context_mean_ratio": 0.484104715759317,
+    "eval_vs_train_answer_mean_ratio": 0.8001919385796544,
+    "eval_direct_grounded_rate": 0.87,
+    "train_direct_grounded_rate": 0.749,
+    "eval_appears_simpler_warning": true
+  }
+}

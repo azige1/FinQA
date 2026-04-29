@@ -1,0 +1,28 @@
+{
+  "rows": 5900,
+  "invalid_rows": 0,
+  "sample_invalid": [],
+  "dataset_counts": {
+    "FinQA": 2699,
+    "TAT-QA": 3090,
+    "SyntheticUnanswerable": 111
+  },
+  "source_split_counts": {
+    "train": 5000,
+    "test": 329,
+    "validation": 313,
+    "valid": 258
+  },
+  "context_count": {
+    "mean": 3.565593220338983,
+    "min": 1,
+    "p50": 3,
+    "max": 30
+  },
+  "evidence_count": {
+    "mean": 0.9811864406779661,
+    "min": 0,
+    "p50": 1,
+    "max": 1
+  }
+}

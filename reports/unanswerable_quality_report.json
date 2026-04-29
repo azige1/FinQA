@@ -1,0 +1,44 @@
+{
+  "rows": 111,
+  "template_answer_rate": 1.0,
+  "question_template_prefix_distribution": {
+    "what was the change": 9,
+    "what is the percentage": 6,
+    "what was the percentage": 6,
+    "what was the difference": 4,
+    "what percent of the": 4,
+    "what is the average": 4,
+    "what is the difference": 3,
+    "what is the change": 3,
+    "what was the sales": 2,
+    "how many types of": 2,
+    "what was the total": 2,
+    "what is the company": 2,
+    "in which year was": 2,
+    "what is the growth": 2,
+    "what is the net": 2,
+    "which year has the": 1,
+    "what was the sum": 1,
+    "how is consolidated adjusted": 1,
+    "what is the value": 1,
+    "what was the operating": 1
+  },
+  "partial_evidence_proxy_rate": 0.2702702702702703,
+  "question_overlap_with_context_proxy_rate": 0.9369369369369369,
+  "answerable_prompt_length": {
+    "count": 5789,
+    "mean": 1361.2687856279151,
+    "p50": 976,
+    "p90": 2781,
+    "max": 14426
+  },
+  "unanswerable_prompt_length": {
+    "count": 111,
+    "mean": 956.081081081081,
+    "p50": 785,
+    "p90": 1563,
+    "max": 3065
+  },
+  "unanswerable_vs_answerable_prompt_mean_ratio": 0.7023455552461432,
+  "notes": "Synthetic unanswerable quality needs manual audit; proxy rates estimate template and partial-evidence risk."
+}

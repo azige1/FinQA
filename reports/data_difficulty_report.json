@@ -1,0 +1,39 @@
+{
+  "rows": 100,
+  "dataset": {
+    "TAT-QA": 49,
+    "FinQA": 49,
+    "SyntheticUnanswerable": 2
+  },
+  "grounding_type": {
+    "direct_grounded": 82,
+    "numeric_grounded": 13,
+    "calculation_hard": 3,
+    "unanswerable": 2
+  },
+  "answer_type": {
+    "span": 37,
+    "number": 54,
+    "multi_span": 7,
+    "unanswerable": 2
+  },
+  "answerability_type": {
+    "answerable": 98,
+    "unanswerable": 2
+  },
+  "proxy_flag_counts": {
+    "has_distractor_context": 51,
+    "citation_confusable": 49,
+    "answer_directly_copied": 32,
+    "is_good_grounded_sample": 100,
+    "requires_numeric_reasoning": 66
+  },
+  "proxy_flag_rates": {
+    "has_distractor_context": 0.51,
+    "citation_confusable": 0.49,
+    "answer_directly_copied": 0.32,
+    "is_good_grounded_sample": 1.0,
+    "requires_numeric_reasoning": 0.66
+  },
+  "notes": "Proxy flags are automatic diagnostics for manual audit, not final human labels."
+}

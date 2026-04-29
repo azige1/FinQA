@@ -1,0 +1,10 @@
+{
+  "num_points": 50,
+  "first_step": 10,
+  "last_step": 500,
+  "last_loss": 0.0013,
+  "last_reward_accuracy": 1.0,
+  "last_reward_margin": 15.577432632446289,
+  "last_learning_rate": 0.0,
+  "last_epoch": 8.0
+}

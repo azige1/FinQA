@@ -1,0 +1,22 @@
+{
+  "audit_rows": 100,
+  "reviewed_rows": 100,
+  "is_chosen_better_rate": 0.99,
+  "ambiguous_pair_rate": 0.01,
+  "chosen_also_bad_rate": 0.0,
+  "rejected_too_easy_rate": 0.0,
+  "format_bias_rate": 0.0,
+  "chosen_avg_len": 355.66,
+  "rejected_avg_len": 298.45,
+  "length_ratio": 1.1916904004020776,
+  "passes_gate": {
+    "enough_reviewed": true,
+    "is_chosen_better_ge_85pct": true,
+    "ambiguous_pair_le_10pct": true,
+    "chosen_also_bad_le_10pct": true,
+    "rejected_too_easy_le_25pct": true,
+    "format_bias_le_15pct": true,
+    "length_ratio_0_5_to_2_0": true
+  },
+  "gate_pass": true
+}

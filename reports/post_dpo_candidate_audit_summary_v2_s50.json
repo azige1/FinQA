@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-04-29T13:04:58",
+  "candidate_name": "dpo_v2_s50",
+  "candidate_adapter_path": "results/dpo/qwen25_7b_finground_dpo_v2_reweighted_s100/checkpoint-50",
+  "status": "post_dpo_audit_sample_created_pending_manual_review",
+  "audit_jsonl": "results/post_dpo_candidate_audit_v2_s50.jsonl",
+  "audit_csv": "results/post_dpo_candidate_audit_v2_s50.csv",
+  "num_unique_rows": 42,
+  "counts_by_reason": {
+    "regressed_exact_vs_sft": 8,
+    "regressed_numeric_exact_vs_sft": 5,
+    "introduced_wrong_citation_vs_sft": 3,
+    "introduced_calculation_error_vs_sft": 5,
+    "unanswerable_slice": 6,
+    "improved_exact_vs_sft": 7,
+    "improved_numeric_exact_vs_sft": 6,
+    "fixed_wrong_citation_vs_sft": 24,
+    "fixed_calculation_error_vs_sft": 6
+  },
+  "manual_gate": {
+    "required_review_rows": 42,
+    "reviewed_rows": 0,
+    "gate_pass": false,
+    "reason": "Manual post-DPO audit still not completed; Codex review recommends no-go for replacing SFT."
+  },
+  "candidate_manifest": "reports/dpo_candidate_manifest_v2_s50.json",
+  "selection_report": "reports/dpo_model_selection_report.json",
+  "flip_report": "reports/dpo_model_selection_flip_report.json",
+  "codex_review": {
+    "status": "completed",
+    "reviewed_rows": 42,
+    "go_no_go": "NO_GO_FOR_REPLACING_SFT",
+    "summary_file": "reports/post_dpo_candidate_audit_codex_summary_v2_s50.json",
+    "reviewed_file": "results/post_dpo_candidate_audit_v2_s50.codex_reviewed.jsonl"
+  }
+}

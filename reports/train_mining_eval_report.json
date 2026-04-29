@@ -1,0 +1,29 @@
+{
+  "rows": 500,
+  "input": "data/unified/train_unified.jsonl",
+  "output": "data/eval/train_mining_eval.jsonl",
+  "dataset": {
+    "TAT-QA": 271,
+    "FinQA": 220,
+    "SyntheticUnanswerable": 9
+  },
+  "grounding_type": {
+    "numeric_grounded": 89,
+    "direct_grounded": 378,
+    "calculation_hard": 24,
+    "unanswerable": 9
+  },
+  "answer_type": {
+    "span": 181,
+    "number": 253,
+    "multi_span": 57,
+    "unanswerable": 9
+  },
+  "answerability_type": {
+    "answerable": 491,
+    "unanswerable": 9
+  },
+  "source_split": {
+    "train": 500
+  }
+}

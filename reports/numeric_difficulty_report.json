@@ -1,0 +1,20 @@
+{
+  "rows": 4074,
+  "dataset": {
+    "FinQA": 2643,
+    "TAT-QA": 1431
+  },
+  "grounding_type": {
+    "direct_grounded": 2780,
+    "numeric_grounded": 1024,
+    "calculation_hard": 270
+  },
+  "direct_lookup_proxy_rate": 0.12714776632302405,
+  "simple_add_sub_proxy_rate": 0.2599410898379971,
+  "percentage_change_proxy_rate": 0.3225331369661267,
+  "year_alignment_proxy_rate": 0.742513500245459,
+  "unit_alignment_proxy_rate": 0.42979872361315663,
+  "multiple_candidate_numbers_rate": 0.9511536573392243,
+  "numeric_answer_directly_appears_rate": 0.26313205694648995,
+  "notes": "Numeric categories are heuristic proxies; audit JSONL is for human verification."
+}

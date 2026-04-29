@@ -1,0 +1,42 @@
+{
+  "rows": 150,
+  "in_training": false,
+  "normalized_question_overlap_with_train": 0,
+  "answer_type": {
+    "number": 126,
+    "span": 24
+  },
+  "grounding_type": {
+    "direct_grounded": 90,
+    "numeric_grounded": 60
+  },
+  "prompt_length": {
+    "count": 150,
+    "mean": 2203.5133333333333,
+    "p50": 1903.5,
+    "p90": 4281,
+    "max": 6798
+  },
+  "context_quality": {
+    "avg_context_chunks": 1.26,
+    "quote_hit_rate": 0.5821917808219178,
+    "citation_confusable_proxy_rate": 0.8533333333333334
+  },
+  "distribution_difference_vs_train": {
+    "financebench_answer_type": {
+      "number": 126,
+      "span": 24
+    },
+    "train_answer_type": {
+      "number": 2469,
+      "span": 1893,
+      "multi_span": 544,
+      "unanswerable": 94
+    },
+    "financebench_avg_context_tokens": 265.82,
+    "train_avg_context_tokens": 208.3666,
+    "financebench_answer_exact_in_context_rate": 0.02,
+    "train_answer_exact_in_context_rate": 0.3042
+  },
+  "notes": "FinanceBench is treated as external audit only and is not read by SFT/DPO data builders."
+}

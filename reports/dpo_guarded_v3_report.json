@@ -1,0 +1,175 @@
+{
+  "input_v2": "data/dpo/dpo_reweighted_v2.jsonl",
+  "input_train": "data/unified/train_unified.jsonl",
+  "output": "data/dpo/dpo_guarded_v3.jsonl",
+  "audit_output": "results/dpo_guarded_v3_pair_audit_120.jsonl",
+  "seed": 44,
+  "rows": 1051,
+  "base_v2_rows": 681,
+  "forced_guard_rows": 150,
+  "numeric_guard_rows": 220,
+  "source": {
+    "model_mined": 233,
+    "rule_generated": 150,
+    "v3_numeric_precision_guard": 220,
+    "hard_negative": 70,
+    "v3_unanswerable_guard": 150,
+    "numeric_corruption": 168,
+    "wrong_citation_corruption": 60
+  },
+  "reject_type": {
+    "fabricated_number": 446,
+    "over_refusal": 70,
+    "calculation_error": 134,
+    "missing_evidence": 80,
+    "forced_answer": 221,
+    "wrong_citation": 100
+  },
+  "difficulty": {
+    "hard": 911,
+    "easy": 80,
+    "medium": 60
+  },
+  "answerability_type": {
+    "answerable": 825,
+    "unanswerable": 226
+  },
+  "numeric_guard_variant": {
+    "precision_rounding_loss": 29,
+    "sign_flip": 62,
+    "last_decimal_drift": 43,
+    "decimal_scale_shift": 49,
+    "off_by_one": 37
+  },
+  "quality": {
+    "rows": 1051,
+    "invalid_rows": 0,
+    "sample_invalid": [],
+    "reject_type": {
+      "fabricated_number": 446,
+      "over_refusal": 70,
+      "calculation_error": 134,
+      "missing_evidence": 80,
+      "forced_answer": 221,
+      "wrong_citation": 100
+    },
+    "source": {
+      "model_mined": 233,
+      "rule_generated": 150,
+      "v3_numeric_precision_guard": 220,
+      "hard_negative": 70,
+      "v3_unanswerable_guard": 150,
+      "numeric_corruption": 168,
+      "wrong_citation_corruption": 60
+    },
+    "difficulty": {
+      "hard": 911,
+      "easy": 80,
+      "medium": 60
+    },
+    "answerability_type": {
+      "answerable": 825,
+      "unanswerable": 226
+    },
+    "reject_type_distribution": {
+      "fabricated_number": 446,
+      "over_refusal": 70,
+      "calculation_error": 134,
+      "missing_evidence": 80,
+      "forced_answer": 221,
+      "wrong_citation": 100
+    },
+    "source_distribution": {
+      "model_mined": 233,
+      "rule_generated": 150,
+      "v3_numeric_precision_guard": 220,
+      "hard_negative": 70,
+      "v3_unanswerable_guard": 150,
+      "numeric_corruption": 168,
+      "wrong_citation_corruption": 60
+    },
+    "difficulty_distribution": {
+      "hard": 911,
+      "easy": 80,
+      "medium": 60
+    },
+    "answerability_distribution": {
+      "answerable": 825,
+      "unanswerable": 226
+    },
+    "chosen_avg_len": 365.3862987630828,
+    "rejected_avg_len": 368.27878211227403,
+    "length_ratio": 0.9921459408206975,
+    "length_bias_report": {
+      "chosen_avg_len": 365.3862987630828,
+      "rejected_avg_len": 368.27878211227403,
+      "length_ratio": 0.9921459408206975,
+      "length_ratio_ok": true
+    }
+  },
+  "difficulty_report": {
+    "rows": 1051,
+    "reject_type": {
+      "fabricated_number": 446,
+      "over_refusal": 70,
+      "calculation_error": 134,
+      "missing_evidence": 80,
+      "forced_answer": 221,
+      "wrong_citation": 100
+    },
+    "source": {
+      "model_mined": 233,
+      "rule_generated": 150,
+      "v3_numeric_precision_guard": 220,
+      "hard_negative": 70,
+      "v3_unanswerable_guard": 150,
+      "numeric_corruption": 168,
+      "wrong_citation_corruption": 60
+    },
+    "difficulty": {
+      "hard": 911,
+      "easy": 80,
+      "medium": 60
+    },
+    "answerability_type": {
+      "answerable": 825,
+      "unanswerable": 226
+    },
+    "hard_rejected_rate": 0.8667935299714558,
+    "numeric_wrongcitation_unsupported_rate": 0.6470028544243578,
+    "format_error_rate": 0.0,
+    "over_refusal_generic_rate": 0.06660323501427212,
+    "forced_answer_rate": 0.21027592768791628,
+    "length_bias_report": {
+      "chosen_avg_len": 365.3862987630828,
+      "rejected_avg_len": 368.27878211227403,
+      "length_ratio": 0.9921459408206975,
+      "length_ratio_ok": true
+    },
+    "passes_planned_constraints": {
+      "format_error_le_10pct": true,
+      "over_refusal_generic_ge_15pct": false,
+      "numeric_wrongcitation_unsupported_ge_50pct": true,
+      "hard_rejected_ge_25pct": true,
+      "length_ratio_0_5_to_2_0": true
+    }
+  },
+  "leakage_guard": {
+    "uses_eval_rows": false,
+    "train_source_split": {
+      "train": 5000
+    },
+    "post_dpo_eval_failures_used_as_training_rows": false,
+    "post_dpo_eval_failures_used_as_taxonomy_only": true
+  },
+  "formal_gate": {
+    "status": "pending_manual_pair_audit",
+    "gate_pass": false,
+    "reason": "v3 adds new train-split guard pairs; audit sample must be reviewed before formal DPO training is accepted."
+  },
+  "notes": [
+    "Kept v2 reweighted data intact.",
+    "Added train-split unanswerable forced-answer guards based on post-DPO failure taxonomy, not eval rows.",
+    "Added train-split numeric precision/sign/scale guards to reduce exact-answer regressions."
+  ]
+}

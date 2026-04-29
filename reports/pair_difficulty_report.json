@@ -1,0 +1,46 @@
+{
+  "rows": 1000,
+  "reject_type": {
+    "calculation_error": 25,
+    "fabricated_number": 335,
+    "wrong_citation": 242,
+    "wrong_format": 3,
+    "forced_answer": 95,
+    "over_refusal": 150,
+    "missing_evidence": 150
+  },
+  "source": {
+    "model_mined": 252,
+    "rule_generated": 300,
+    "numeric_corruption": 168,
+    "wrong_citation_corruption": 186,
+    "hard_negative": 94
+  },
+  "difficulty": {
+    "hard": 661,
+    "medium": 189,
+    "easy": 150
+  },
+  "answerability_type": {
+    "answerable": 898,
+    "unanswerable": 102
+  },
+  "hard_rejected_rate": 0.661,
+  "numeric_wrongcitation_unsupported_rate": 0.602,
+  "format_error_rate": 0.003,
+  "over_refusal_generic_rate": 0.15,
+  "forced_answer_rate": 0.095,
+  "length_bias_report": {
+    "chosen_avg_len": 368.162,
+    "rejected_avg_len": 307.595,
+    "length_ratio": 1.1969050212129584,
+    "length_ratio_ok": true
+  },
+  "passes_planned_constraints": {
+    "format_error_le_10pct": true,
+    "over_refusal_generic_ge_15pct": true,
+    "numeric_wrongcitation_unsupported_ge_50pct": true,
+    "hard_rejected_ge_25pct": true,
+    "length_ratio_0_5_to_2_0": true
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "file": "data/sft/sft_train.jsonl",
+  "rows": 5000,
+  "invalid_rows": 0,
+  "sample_errors": []
+}

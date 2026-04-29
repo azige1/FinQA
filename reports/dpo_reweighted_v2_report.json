@@ -1,0 +1,82 @@
+{
+  "input": "data/dpo/dpo_balanced_v1.jsonl",
+  "output": "data/dpo/dpo_reweighted_v2.jsonl",
+  "seed": 43,
+  "rows": 681,
+  "quota_hits": {
+    "model_mined::fabricated_number": {
+      "available": 167,
+      "quota": 167,
+      "selected": 167
+    },
+    "model_mined::calculation_error": {
+      "available": 25,
+      "quota": 25,
+      "selected": 25
+    },
+    "numeric_corruption::fabricated_number": {
+      "available": 168,
+      "quota": 168,
+      "selected": 168
+    },
+    "model_mined::wrong_citation": {
+      "available": 56,
+      "quota": 40,
+      "selected": 40
+    },
+    "wrong_citation_corruption::wrong_citation": {
+      "available": 186,
+      "quota": 60,
+      "selected": 60
+    },
+    "rule_generated::missing_evidence": {
+      "available": 150,
+      "quota": 80,
+      "selected": 80
+    },
+    "rule_generated::over_refusal": {
+      "available": 150,
+      "quota": 70,
+      "selected": 70
+    },
+    "hard_negative::forced_answer": {
+      "available": 94,
+      "quota": 70,
+      "selected": 70
+    },
+    "model_mined::forced_answer": {
+      "available": 1,
+      "quota": 1,
+      "selected": 1
+    }
+  },
+  "source": {
+    "hard_negative": 70,
+    "model_mined": 233,
+    "wrong_citation_corruption": 60,
+    "numeric_corruption": 168,
+    "rule_generated": 150
+  },
+  "reject_type": {
+    "forced_answer": 71,
+    "fabricated_number": 335,
+    "wrong_citation": 100,
+    "calculation_error": 25,
+    "missing_evidence": 80,
+    "over_refusal": 70
+  },
+  "difficulty": {
+    "hard": 541,
+    "medium": 60,
+    "easy": 80
+  },
+  "answerability_type": {
+    "unanswerable": 76,
+    "answerable": 605
+  },
+  "notes": [
+    "Reduced synthetic wrong-citation pairs to avoid over-optimizing citation style.",
+    "Kept all numeric corruption and model-mined calculation-error pairs available in v1.",
+    "Designed to be trained with beta=0.05 and about 100 steps as a conservative DPO v2."
+  ]
+}

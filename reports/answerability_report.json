@@ -1,0 +1,11 @@
+{
+  "rows": 5900,
+  "grounding_type": {
+    "direct_grounded": 4495,
+    "numeric_grounded": 1024,
+    "unanswerable": 111,
+    "calculation_hard": 270
+  },
+  "answerable_rows": 5789,
+  "unanswerable_rows": 111
+}

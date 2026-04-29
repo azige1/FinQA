@@ -1,0 +1,9 @@
+{
+  "rows": 5900,
+  "answer_type": {
+    "number": 3090,
+    "span": 2100,
+    "multi_span": 599,
+    "unanswerable": 111
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "accepted_by": "project_owner_via_chat",
+  "accepted_at_local": "20260428_210344",
+  "basis": "User stated Codex audit is acceptable; promoted Codex-assisted review to official preference audit gate.",
+  "source_audit": "results\\preference_pair_audit_100.codex_reviewed.jsonl",
+  "official_audit": "results\\preference_pair_audit_100.jsonl",
+  "official_report": "reports\\preference_pair_audit_report.json"
+}

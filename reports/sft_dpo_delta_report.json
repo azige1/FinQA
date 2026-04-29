@@ -1,0 +1,149 @@
+{
+  "n": 400,
+  "exact_transition_counts": {
+    "both_wrong": 258,
+    "sft_wrong_dpo_correct": 10,
+    "sft_correct_dpo_wrong": 23,
+    "both_correct": 109
+  },
+  "numeric_transition_counts": {
+    "both_wrong": 221,
+    "sft_wrong_dpo_correct": 9,
+    "sft_correct_dpo_wrong": 16,
+    "both_correct": 32
+  },
+  "by_dataset_exact_transition_counts": {
+    "FinQA": {
+      "both_wrong": 217,
+      "sft_wrong_dpo_correct": 7,
+      "sft_correct_dpo_wrong": 15,
+      "both_correct": 25
+    },
+    "SyntheticUnanswerable": {
+      "both_wrong": 1,
+      "sft_wrong_dpo_correct": 0,
+      "sft_correct_dpo_wrong": 0,
+      "both_correct": 5
+    },
+    "TAT-QA": {
+      "both_wrong": 40,
+      "sft_wrong_dpo_correct": 3,
+      "sft_correct_dpo_wrong": 8,
+      "both_correct": 79
+    }
+  },
+  "new_errors_dpo_vs_sft": {
+    "unsupported_claim": 28,
+    "fabricated_number": 26,
+    "calculation_error": 16,
+    "missing_evidence": 9,
+    "over_refusal": 9,
+    "wrong_citation": 1
+  },
+  "fixed_errors_dpo_vs_sft": {
+    "wrong_citation": 29,
+    "fabricated_number": 15,
+    "unsupported_claim": 8,
+    "calculation_error": 9,
+    "missing_evidence": 1,
+    "over_refusal": 1
+  },
+  "example_ids": {
+    "sft_correct_dpo_wrong": [
+      "finqa_test_finqa1061",
+      "finqa_test_finqa218",
+      "finqa_test_finqa336",
+      "finqa_test_finqa413",
+      "finqa_test_finqa714",
+      "finqa_test_finqa77",
+      "finqa_test_finqa848",
+      "finqa_test_finqa861",
+      "finqa_valid_finqa118",
+      "finqa_valid_finqa503",
+      "finqa_valid_finqa633",
+      "finqa_valid_finqa678",
+      "finqa_valid_finqa709",
+      "finqa_valid_finqa715",
+      "finqa_valid_finqa721",
+      "tatqa_validation_04101630b98a334e2cf9e6d1650868eb",
+      "tatqa_validation_20c3a8d0ca9ef74bc9901fc7703738e9",
+      "tatqa_validation_33ff20f73d37e7014d573a0caf54d6bb",
+      "tatqa_validation_7cf174ef3b3c0bb85903c58317d9d324",
+      "tatqa_validation_86985471170b376d74f7a6f1f9afa3e4"
+    ],
+    "new_unsupported_claim": [
+      "finqa_test_finqa1061",
+      "finqa_test_finqa150",
+      "finqa_test_finqa218",
+      "finqa_test_finqa336",
+      "finqa_test_finqa413",
+      "finqa_test_finqa706",
+      "finqa_test_finqa714",
+      "finqa_test_finqa730",
+      "finqa_test_finqa77",
+      "finqa_test_finqa822",
+      "finqa_test_finqa848",
+      "finqa_test_finqa861",
+      "finqa_test_finqa973",
+      "finqa_valid_finqa117",
+      "finqa_valid_finqa118",
+      "finqa_valid_finqa393",
+      "finqa_valid_finqa503",
+      "finqa_valid_finqa633",
+      "finqa_valid_finqa678",
+      "finqa_valid_finqa709"
+    ],
+    "new_calculation_error": [
+      "finqa_test_finqa1061",
+      "finqa_test_finqa218",
+      "finqa_test_finqa336",
+      "finqa_test_finqa413",
+      "finqa_test_finqa714",
+      "finqa_test_finqa77",
+      "finqa_test_finqa848",
+      "finqa_test_finqa861",
+      "finqa_valid_finqa118",
+      "finqa_valid_finqa503",
+      "finqa_valid_finqa633",
+      "finqa_valid_finqa678",
+      "finqa_valid_finqa709",
+      "finqa_valid_finqa715",
+      "finqa_valid_finqa721",
+      "tatqa_validation_b889a419062af9968a46e6d45255e648"
+    ],
+    "wrong_citation_fixed": [
+      "finqa_test_finqa166",
+      "finqa_test_finqa336",
+      "finqa_test_finqa371",
+      "finqa_test_finqa379",
+      "finqa_test_finqa421",
+      "finqa_test_finqa747",
+      "finqa_test_finqa801",
+      "finqa_test_finqa820",
+      "finqa_test_finqa851",
+      "finqa_test_finqa972",
+      "finqa_valid_finqa173",
+      "finqa_valid_finqa215",
+      "finqa_valid_finqa300",
+      "finqa_valid_finqa405",
+      "finqa_valid_finqa527",
+      "finqa_valid_finqa682",
+      "finqa_valid_finqa709",
+      "finqa_valid_finqa746",
+      "finqa_valid_finqa790",
+      "finqa_valid_finqa824"
+    ],
+    "sft_wrong_dpo_correct": [
+      "finqa_test_finqa820",
+      "finqa_valid_finqa39",
+      "finqa_valid_finqa53",
+      "finqa_valid_finqa572",
+      "finqa_valid_finqa685",
+      "finqa_valid_finqa765",
+      "finqa_valid_finqa8",
+      "tatqa_validation_0371d1b0bb31ca64f6f9903b83541abe",
+      "tatqa_validation_4b2c7d6c7dd3394ec96efac69931cb24",
+      "tatqa_validation_e2f8522285722c66eb3a910ca91f28f0"
+    ]
+  }
+}

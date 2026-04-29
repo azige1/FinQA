@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-04-29T13:09:18",
+  "review_type": "codex_assisted_post_dpo_candidate_review",
+  "formal_human_gate_pass": false,
+  "formal_human_gate_reason": "This review is Codex-assisted; human sign-off is still required before formal acceptance.",
+  "candidate_name": "dpo_v2_s50",
+  "candidate_adapter_path": "results/dpo/qwen25_7b_finground_dpo_v2_reweighted_s100/checkpoint-50",
+  "reviewed_rows": 42,
+  "judgment_counts": {
+    "sft_better": 10,
+    "tie_good": 3,
+    "tie_bad": 1,
+    "dpo_better": 10,
+    "metric_artifact_or_tie": 2,
+    "marginal_better_but_still_wrong": 16
+  },
+  "severity_counts": {
+    "low": 6,
+    "high": 4,
+    "medium": 15,
+    "critical": 2,
+    "none": 15
+  },
+  "blocking_rows": [
+    {
+      "id": "finqa_test_finqa336",
+      "severity": "high",
+      "judgment": "sft_better",
+      "notes": "DPO changes an exact SFT answer 148.36 into 0.4436. It fixes citation flag but introduces a severe numeric/calculation error."
+    },
+    {
+      "id": "finqa_test_finqa714",
+      "severity": "high",
+      "judgment": "sft_better",
+      "notes": "DPO changes exact 410.08 into 411.08, a material numeric regression."
+    },
+    {
+      "id": "synthetic_unanswerable_heldout_12",
+      "severity": "critical",
+      "judgment": "sft_better",
+      "notes": "DPO forces a fabricated numeric answer on an unanswerable sample where SFT correctly refused."
+    },
+    {
+      "id": "synthetic_unanswerable_heldout_32",
+      "severity": "critical",
+      "judgment": "sft_better",
+      "notes": "DPO forces an answer-like statement on an unanswerable sample where SFT correctly refused."
+    },
+    {
+      "id": "tatqa_validation_3404ada9eba910b36a2e3d0e0a8eee47",
+      "severity": "high",
+      "judgment": "sft_better",
+      "notes": "DPO collapses a correct explanatory span into only $5.3 million, losing the requested rationale."
+    },
+    {
+      "id": "synthetic_unanswerable_heldout_78",
+      "severity": "high",
+      "judgment": "tie_bad",
+      "notes": "Both SFT and DPO force unsupported numeric answers on an unanswerable sample; DPO is not worse, but the candidate still fails this case."
+    }
+  ],
+  "critical_high_sft_better_count": 5,
+  "go_no_go": "NO_GO_FOR_REPLACING_SFT",
+  "recommendation": "Do not promote DPO v2-s50 as the final replacement for SFT. Keep it as the best DPO candidate so far, but run a v3 focused on unanswerable forced-answer regressions and numeric precision regressions.",
+  "main_blockers": [
+    "Two unanswerable samples regress from correct refusal to forced unsupported answers.",
+    "Several FinQA numeric samples regress from exact SFT answers to wrong DPO answers.",
+    "Two TAT-QA samples keep correct answer text but introduce wrong citation flags.",
+    "Some apparent DPO improvements are evaluator formatting artifacts rather than semantic gains."
+  ],
+  "candidate_still_useful_for": [
+    "Mining examples for citation repair behavior.",
+    "As a reference checkpoint showing that v2 weighting improves wrong-citation rate with limited EM loss.",
+    "Designing v3 hard negatives around forced-answer and numeric precision failures."
+  ],
+  "next_action": "Build DPO v3 data by adding hard negatives from post-DPO regressions and increasing unanswerable/precision protection, then run a short beta=0.05 checkpoint sweep.",
+  "reviewed_file": "results/post_dpo_candidate_audit_v2_s50.codex_reviewed.jsonl",
+  "source_audit_file": "results/post_dpo_candidate_audit_v2_s50.jsonl"
+}

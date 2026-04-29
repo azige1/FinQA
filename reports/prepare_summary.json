@@ -1,0 +1,7 @@
+{
+  "train_rows": 5000,
+  "val_rows": 500,
+  "eval_rows": 400,
+  "financebench_audit_rows": 150,
+  "all_unified_rows": 24283
+}

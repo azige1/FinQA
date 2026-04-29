@@ -1,0 +1,106 @@
+{
+  "summary": {
+    "train_rows": 5000,
+    "val_rows": 500,
+    "eval_rows": 400,
+    "deep_leakage_risk": "high"
+  },
+  "by_dataset": {
+    "FinQA": {
+      "rows": 2699,
+      "context_marker_counts": {},
+      "marker_examples": [],
+      "suspicious_extra_field_counts": {},
+      "nonempty_gold_program_rows": 0
+    },
+    "TAT-QA": {
+      "rows": 3090,
+      "context_marker_counts": {
+        "\\bprogram(?:\\s*\\(nested\\))?\\s*:": 1
+      },
+      "marker_examples": [
+        {
+          "id": "tatqa_train_951493565d979955c9d2b64935968c0b",
+          "dataset": "TAT-QA",
+          "chunk_id": "83c4055972b4336c42b289507e466bd7",
+          "pattern": "\\bprogram(?:\\s*\\(nested\\))?\\s*:",
+          "text_preview": "The following table summarizes the stock repurchase activity for the three months ended May 31, 2019 and the approximate dollar value of shares that may yet be purchased pursuant to our stock repurchase program:"
+        }
+      ],
+      "suspicious_extra_field_counts": {},
+      "nonempty_gold_program_rows": 719
+    },
+    "SyntheticUnanswerable": {
+      "rows": 111,
+      "context_marker_counts": {},
+      "marker_examples": [],
+      "suspicious_extra_field_counts": {},
+      "nonempty_gold_program_rows": 0
+    }
+  },
+  "split_overlap": {
+    "train_vs_eval": {
+      "exact_question_overlap": 0,
+      "normalized_question_overlap": 0,
+      "same_doc_id_overlap": 0,
+      "same_table_id_overlap": 0,
+      "same_chunk_id_overlap": 0,
+      "sample_overlaps": {
+        "questions": [],
+        "doc_ids": [],
+        "table_ids": [],
+        "chunk_ids": []
+      }
+    },
+    "train_val_vs_eval": {
+      "exact_question_overlap": 0,
+      "normalized_question_overlap": 0,
+      "same_doc_id_overlap": 54,
+      "same_table_id_overlap": 52,
+      "same_chunk_id_overlap": 322,
+      "sample_overlaps": {
+        "questions": [],
+        "doc_ids": [
+          "finqa_valid_0",
+          "finqa_valid_540",
+          "tatqa_validation_1",
+          "tatqa_validation_101",
+          "tatqa_validation_112",
+          "tatqa_validation_118",
+          "tatqa_validation_123",
+          "tatqa_validation_128",
+          "tatqa_validation_130",
+          "tatqa_validation_131"
+        ],
+        "table_ids": [
+          "003755794bbbbcffd0667b9600aeb0be",
+          "028ee763c1f90a74df4736ce7b5ffba4",
+          "072057b32a9b61def14de83615f8a0e5",
+          "09a6000ccf5038981fb89ae406302262",
+          "0ba33bc0610e557810de948f4248719e",
+          "1df5c844392a7823c038c5b8f0cec73d",
+          "249a345bb86b13642427834d02363ff8",
+          "28748dee88f1ea514d2bbdf1b48e792b",
+          "2e3e1ea3ff290691d447b7a7c59096e4",
+          "34bc860f3e5a281782c1cbd95ba5eb70"
+        ],
+        "chunk_ids": [
+          "003755794bbbbcffd0667b9600aeb0be_table",
+          "0061756069540a34655f9452ed3ba668",
+          "007f7f545cfa5ea661459ff91276b216",
+          "00a8ffe02ced7e97be18c97e48b81d00",
+          "028ee763c1f90a74df4736ce7b5ffba4_table",
+          "036afd489f9cc407490f950cf12da42a",
+          "0377d1cdb5a6582412960bcd0fbc5eb0",
+          "044a04eacaefe6fa6130246d777d774e",
+          "055e1c6cd8d128eae9b7cd0b9fe97356",
+          "06b252f223ec233373139b5efeeff966"
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Top-level answer/evidence fields are expected labels, not leakage by themselves.",
+    "Context marker checks are conservative and may flag normal business text such as 'program:'."
+  ]
+}

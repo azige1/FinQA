@@ -1,0 +1,107 @@
+{
+  "rows": 600,
+  "reject_type": {
+    "fabricated_number": 150,
+    "wrong_citation": 150,
+    "over_refusal": 90,
+    "forced_answer": 60,
+    "missing_evidence": 90,
+    "wrong_format": 60
+  },
+  "source": {
+    "numeric_corruption": 150,
+    "wrong_citation_corruption": 150,
+    "rule_generated": 240,
+    "hard_negative": 60
+  },
+  "difficulty": {
+    "hard": 300,
+    "medium": 150,
+    "easy": 150
+  },
+  "answerability_type": {
+    "answerable": 536,
+    "unanswerable": 64
+  },
+  "length_bias": {
+    "chosen_length": {
+      "count": 600,
+      "mean": 338.02166666666665,
+      "p50": 254.0,
+      "p90": 479,
+      "max": 980
+    },
+    "rejected_length": {
+      "count": 600,
+      "mean": 263.5683333333333,
+      "p50": 208.0,
+      "p90": 480,
+      "max": 755
+    },
+    "chosen_rejected_mean_ratio": 1.2824820887688835
+  },
+  "by_reject_type": {
+    "fabricated_number": {
+      "rows": 150,
+      "avg_rejected_length": 360.35333333333335,
+      "unique_rejected_answer_rate": 0.9066666666666666,
+      "unique_rejected_reason_rate": 0.006666666666666667,
+      "schema_valid_rejected_rate": 1.0,
+      "same_evidence_as_chosen_rate": 1.0,
+      "template_phrase_rate": 1.0
+    },
+    "wrong_citation": {
+      "rows": 150,
+      "avg_rejected_length": 332.02,
+      "unique_rejected_answer_rate": 0.8866666666666667,
+      "unique_rejected_reason_rate": 0.006666666666666667,
+      "schema_valid_rejected_rate": 1.0,
+      "same_evidence_as_chosen_rate": 0.0,
+      "template_phrase_rate": 0.0
+    },
+    "over_refusal": {
+      "rows": 90,
+      "avg_rejected_length": 169.0,
+      "unique_rejected_answer_rate": 0.011111111111111112,
+      "unique_rejected_reason_rate": 0.011111111111111112,
+      "schema_valid_rejected_rate": 1.0,
+      "same_evidence_as_chosen_rate": 0.0,
+      "template_phrase_rate": 1.0
+    },
+    "forced_answer": {
+      "rows": 60,
+      "avg_rejected_length": 432.51666666666665,
+      "unique_rejected_answer_rate": 0.016666666666666666,
+      "unique_rejected_reason_rate": 0.016666666666666666,
+      "schema_valid_rejected_rate": 1.0,
+      "same_evidence_as_chosen_rate": 0.0,
+      "template_phrase_rate": 1.0
+    },
+    "missing_evidence": {
+      "rows": 90,
+      "avg_rejected_length": 128.88888888888889,
+      "unique_rejected_answer_rate": 0.9333333333333333,
+      "unique_rejected_reason_rate": 0.011111111111111112,
+      "schema_valid_rejected_rate": 1.0,
+      "same_evidence_as_chosen_rate": 0.03333333333333333,
+      "template_phrase_rate": 0.03333333333333333
+    },
+    "wrong_format": {
+      "rows": 60,
+      "avg_rejected_length": 25.4,
+      "unique_rejected_answer_rate": 0.016666666666666666,
+      "unique_rejected_reason_rate": 0.016666666666666666,
+      "schema_valid_rejected_rate": 0.0,
+      "same_evidence_as_chosen_rate": 0.0,
+      "template_phrase_rate": 0.0
+    }
+  },
+  "artifact_risks": {
+    "wrong_format_easy_to_detect": true,
+    "over_refusal_template_like": true,
+    "forced_answer_template_like": true,
+    "fabricated_number_mechanical": true,
+    "wrong_citation_potentially_confusing": true
+  },
+  "notes": "Rule DPO is a seed set. Artifact risks must be diluted by model-mined pairs and preference audit."
+}

@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-04-29T13:16:29",
+  "review_type": "codex_assisted_v3_pair_audit",
+  "audit_rows": 120,
+  "reviewed_rows": 120,
+  "is_chosen_better_rate": 1.0,
+  "ambiguous_pair_rate": 0.0,
+  "chosen_also_bad_rate": 0.0,
+  "format_issue_rate": 0.0,
+  "issue_counts": {
+    "ok_unanswerable_guard": 24,
+    "ok_numeric_guard": 25,
+    "ok_existing_pair": 57,
+    "ok_citation_pair": 14
+  },
+  "codex_gate_pass": true,
+  "formal_human_gate_pass": false,
+  "formal_human_gate_reason": "Codex-assisted audit is not a human sign-off; keep v3 formal training blocked until owner accepts or reviews.",
+  "source_audit_file": "results/dpo_guarded_v3_pair_audit_120.jsonl",
+  "codex_reviewed_file": "results/dpo_guarded_v3_pair_audit_120.codex_reviewed.jsonl"
+}

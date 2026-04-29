@@ -1,0 +1,24 @@
+{
+  "rows": 200,
+  "answerable_rows": 100,
+  "unanswerable_rows": 100,
+  "requested_answerable": 100,
+  "requested_unanswerable": 100,
+  "dataset": {
+    "FinQA": 57,
+    "TAT-QA": 43,
+    "SyntheticUnanswerable": 100
+  },
+  "grounding_type": {
+    "direct_grounded": 82,
+    "unanswerable": 100,
+    "numeric_grounded": 15,
+    "calculation_hard": 3
+  },
+  "source_split": {
+    "valid": 20,
+    "validation": 143,
+    "test": 37
+  },
+  "warning": ""
+}

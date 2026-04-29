@@ -1,0 +1,8 @@
+[project]
+name = "finground-qa"
+version = "0.1.0"
+description = "Grounded generation post-training pipeline for financial report QA."
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]

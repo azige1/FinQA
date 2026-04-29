@@ -1,0 +1,30 @@
+{
+  "rows": 400,
+  "grounding_type": {
+    "numeric_grounded": 39,
+    "direct_grounded": 348,
+    "calculation_hard": 7,
+    "unanswerable": 6
+  },
+  "answer_type": {
+    "number": 278,
+    "multi_span": 26,
+    "span": 90,
+    "unanswerable": 6
+  },
+  "reasoning_type": {
+    "calculation": 280,
+    "multi_hop": 26,
+    "lookup": 83,
+    "comparison": 11
+  },
+  "answer_exact_in_context_rate": 0.2075,
+  "answer_exact_in_evidence_rate": 0.21,
+  "numeric_answer_directly_appears_rate": 0.256198347107438,
+  "avg_context_chunks": 2.5975,
+  "avg_context_tokens": 153.79,
+  "citation_confusable_proxy_rate": 0.98,
+  "trivial_lookup_proxy_rate": 0.0,
+  "non_trivial_grounded_proxy_rate": 1.0,
+  "notes": "Proxy difficulty metrics are heuristics for audit and stratified reporting."
+}
