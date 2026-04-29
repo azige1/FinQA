@@ -1,5 +1,72 @@
 {
   "generated_at": "2026-04-29T15:11:36",
+  "models": {
+    "sft": {
+      "label": "SFT",
+      "metrics": "results/sft_metrics.json",
+      "scored": "results/sft_scored.jsonl",
+      "adapter": "results/sft/qwen25_7b_finground_sft"
+    },
+    "dpo_v2_s50": {
+      "label": "DPO v2 s50",
+      "metrics": "results/dpo_v2_reweighted_s50_metrics.json",
+      "scored": "results/dpo_v2_reweighted_s50_scored.jsonl",
+      "adapter": "results/dpo/qwen25_7b_finground_dpo_v2_reweighted_s100/checkpoint-50"
+    },
+    "dpo_v3_guarded_s100": {
+      "label": "DPO v3 guarded s100",
+      "metrics": "results/dpo_v3_guarded_s100_metrics.json",
+      "scored": "results/dpo_v3_guarded_s100_scored.jsonl",
+      "adapter": "results/dpo/qwen25_7b_finground_dpo_v3_guarded_s100_candidate"
+    }
+  },
+  "metrics": {
+    "sft": {
+      "exact_match": 0.33,
+      "numeric_exact_match": 0.17266187050359713,
+      "faithfulness_rate": 0.42,
+      "citation_precision": 0.895,
+      "citation_consistency_score": 0.633125,
+      "number_coverage_rate": 0.35,
+      "wrong_citation_rate": 0.0825,
+      "unsupported_claim_rate": 0.54,
+      "fabricated_number_rate": 0.535,
+      "calculation_error_rate": 0.575,
+      "over_refusal_rate": 0.01,
+      "forced_answer_rate": 0.0025,
+      "schema_pass_rate": 0.9925
+    },
+    "dpo_v2_s50": {
+      "exact_match": 0.3275,
+      "numeric_exact_match": 0.17625899280575538,
+      "faithfulness_rate": 0.4175,
+      "citation_precision": 0.9575,
+      "citation_consistency_score": 0.6425,
+      "number_coverage_rate": 0.3325,
+      "wrong_citation_rate": 0.03,
+      "unsupported_claim_rate": 0.555,
+      "fabricated_number_rate": 0.5525,
+      "calculation_error_rate": 0.5725,
+      "over_refusal_rate": 0.005,
+      "forced_answer_rate": 0.0075,
+      "schema_pass_rate": 0.995
+    },
+    "dpo_v3_guarded_s100": {
+      "exact_match": 0.3275,
+      "numeric_exact_match": 0.17266187050359713,
+      "faithfulness_rate": 0.4125,
+      "citation_precision": 0.945,
+      "citation_consistency_score": 0.636875,
+      "number_coverage_rate": 0.3375,
+      "wrong_citation_rate": 0.03,
+      "unsupported_claim_rate": 0.5575,
+      "fabricated_number_rate": 0.55,
+      "calculation_error_rate": 0.575,
+      "over_refusal_rate": 0.0125,
+      "forced_answer_rate": 0.0025,
+      "schema_pass_rate": 0.995
+    }
+  },
   "comparisons": {
     "dpo_v2_s50_vs_sft": {
       "exact": {
@@ -710,5 +777,86 @@
         }
       }
     }
-  }
+  },
+  "audit_summary": {
+    "flagged_rows": 18,
+    "category_counts": {
+      "v3_introduced_missing_evidence": 3,
+      "v3_introduced_over_refusal": 3,
+      "persistent_all_wrong": 6,
+      "v3_fixed_fabricated_number": 5,
+      "v3_improved_vs_v2_exact": 4,
+      "v3_fixed_calculation_error": 2,
+      "v3_fixed_v2_sft_regression": 4,
+      "v3_fixed_unsupported_claim": 4,
+      "v3_numeric_improvement_vs_v2": 2,
+      "v3_regressed_vs_v2_exact": 4,
+      "v3_introduced_fabricated_number": 4,
+      "v3_introduced_calculation_error": 3,
+      "v3_regressed_vs_sft_exact": 7,
+      "v3_new_exact_regression_vs_sft_and_v2": 3,
+      "v3_introduced_unsupported_claim": 5,
+      "v3_numeric_regression_vs_v2": 3,
+      "v3_introduced_wrong_citation": 1,
+      "v3_fixed_v2_forced_answer": 2,
+      "v3_fixed_forced_answer": 2,
+      "v3_forced_answer_unanswerable": 1,
+      "v3_fixed_wrong_citation": 1
+    },
+    "dataset_category_counts": {
+      "FinQA": {
+        "v3_introduced_missing_evidence": 2,
+        "v3_introduced_over_refusal": 2,
+        "persistent_all_wrong": 3,
+        "v3_fixed_fabricated_number": 4,
+        "v3_improved_vs_v2_exact": 2,
+        "v3_fixed_calculation_error": 2,
+        "v3_fixed_v2_sft_regression": 2,
+        "v3_fixed_unsupported_claim": 2,
+        "v3_numeric_improvement_vs_v2": 2,
+        "v3_regressed_vs_v2_exact": 3,
+        "v3_introduced_fabricated_number": 4,
+        "v3_introduced_calculation_error": 3,
+        "v3_regressed_vs_sft_exact": 5,
+        "v3_new_exact_regression_vs_sft_and_v2": 2,
+        "v3_introduced_unsupported_claim": 4,
+        "v3_numeric_regression_vs_v2": 3
+      },
+      "SyntheticUnanswerable": {
+        "v3_improved_vs_v2_exact": 2,
+        "v3_fixed_v2_sft_regression": 2,
+        "v3_fixed_unsupported_claim": 2,
+        "v3_fixed_v2_forced_answer": 2,
+        "v3_fixed_forced_answer": 2,
+        "v3_forced_answer_unanswerable": 1,
+        "persistent_all_wrong": 1,
+        "v3_fixed_fabricated_number": 1,
+        "v3_fixed_wrong_citation": 1
+      },
+      "TAT-QA": {
+        "v3_regressed_vs_v2_exact": 1,
+        "v3_regressed_vs_sft_exact": 2,
+        "v3_new_exact_regression_vs_sft_and_v2": 1,
+        "persistent_all_wrong": 2,
+        "v3_introduced_wrong_citation": 1,
+        "v3_introduced_unsupported_claim": 1,
+        "v3_introduced_missing_evidence": 1,
+        "v3_introduced_over_refusal": 1
+      }
+    },
+    "severity_counts": {
+      "medium": 5,
+      "low": 4,
+      "critical": 4,
+      "high": 5
+    }
+  },
+  "persistent_all_wrong_total": 261,
+  "conclusion": "NO_GO_FOR_PROMOTING_V3. V3 fixes some v2 rows but introduces offsetting exact/numeric regressions and remains below v2_s50 on the main DPO selection balance.",
+  "next_data_actions": [
+    "Do not increase generic DPO steps before auditing the v3 regression rows.",
+    "Create a small targeted v4 pool from v3_new_exact_regression_vs_sft_and_v2 and v3_numeric_regression_vs_v2.",
+    "Keep unanswerable guards, but reduce pressure that converts correct refusals into answer-like outputs.",
+    "Separate citation-repair pairs from numeric-answer pairs so citation gains do not trade off exact numeric accuracy."
+  ]
 }
