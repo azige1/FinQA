@@ -97,7 +97,9 @@ reports/final_experiment_report_zh.md        中文最终实验报告
 reports/dpo_model_selection_report.md        中文模型选择报告
 docs/project_showcase_zh.md                  GitHub/面试展示稿
 docs/final_resume_bullets_zh.md              简历 bullet
+docs/application_package_zh.md               投递材料包
 docs/interview_script.md                     中文面试讲稿
+docs/interview_flashcards_zh.md              面试速记卡
 reports/final_metrics_comparison.png         核心结果图
 scripts/build_dpo_targeted_v4.py             v4 targeted pair 构建脚本
 scripts/run_dpo_v4_targeted_sweep_a10040.sh  v4 sweep 运行脚本
