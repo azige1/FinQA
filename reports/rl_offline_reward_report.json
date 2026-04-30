@@ -1,0 +1,314 @@
+{
+  "eval_file": "data\\eval\\eval.jsonl",
+  "num_scored": 2400,
+  "num_prompts": 400,
+  "models": {
+    "base": {
+      "count": 400,
+      "reward_mean": -0.2994698528893497,
+      "raw_reward_mean": -1.7903191173361046,
+      "features": {
+        "calculation_error": 0.63,
+        "citation_consistency_score": 0.22018088266389896,
+        "citation_precision": 0.24875,
+        "exact_match": 0.1975,
+        "fabricated_number": 0.6,
+        "faithfulness_proxy": 0.1675,
+        "forced_answer": 0.0,
+        "format_error": 0.03,
+        "generic_answer": 0.0075,
+        "json_valid": 0.97,
+        "numeric_exact_match": 0.035,
+        "over_refusal": 0.07,
+        "schema_error": 0.75,
+        "schema_pass": 0.25,
+        "unsupported_claim": 0.625,
+        "wrong_citation": 0.76
+      }
+    },
+    "dpo_v1_s500": {
+      "count": 400,
+      "reward_mean": 0.3088333333333344,
+      "raw_reward_mean": 1.933000000000003,
+      "features": {
+        "calculation_error": 0.5925,
+        "citation_consistency_score": 0.6225,
+        "citation_precision": 0.945,
+        "exact_match": 0.2975,
+        "fabricated_number": 0.5625,
+        "faithfulness_proxy": 0.4,
+        "forced_answer": 0.0025,
+        "format_error": 0.0,
+        "generic_answer": 0.0,
+        "json_valid": 1.0,
+        "numeric_exact_match": 0.1025,
+        "over_refusal": 0.03,
+        "schema_error": 0.005,
+        "schema_pass": 0.995,
+        "unsupported_claim": 0.59,
+        "wrong_citation": 0.0125
+      }
+    },
+    "dpo_v2_s100": {
+      "count": 400,
+      "reward_mean": 0.3275625000000007,
+      "raw_reward_mean": 2.051625000000003,
+      "features": {
+        "calculation_error": 0.5775,
+        "citation_consistency_score": 0.635625,
+        "citation_precision": 0.9525,
+        "exact_match": 0.3175,
+        "fabricated_number": 0.56,
+        "faithfulness_proxy": 0.4075,
+        "forced_answer": 0.0075,
+        "format_error": 0.0,
+        "generic_answer": 0.0,
+        "json_valid": 1.0,
+        "numeric_exact_match": 0.1175,
+        "over_refusal": 0.005,
+        "schema_error": 0.005,
+        "schema_pass": 0.995,
+        "unsupported_claim": 0.5625,
+        "wrong_citation": 0.035
+      }
+    },
+    "dpo_v2_s50": {
+      "count": 400,
+      "reward_mean": 0.338708333333334,
+      "raw_reward_mean": 2.1250000000000036,
+      "features": {
+        "calculation_error": 0.5725,
+        "citation_consistency_score": 0.6425,
+        "citation_precision": 0.9575,
+        "exact_match": 0.3275,
+        "fabricated_number": 0.5525,
+        "faithfulness_proxy": 0.4175,
+        "forced_answer": 0.0075,
+        "format_error": 0.0,
+        "generic_answer": 0.0,
+        "json_valid": 1.0,
+        "numeric_exact_match": 0.1225,
+        "over_refusal": 0.005,
+        "schema_error": 0.005,
+        "schema_pass": 0.995,
+        "unsupported_claim": 0.555,
+        "wrong_citation": 0.03
+      }
+    },
+    "dpo_v3_s100": {
+      "count": 400,
+      "reward_mean": 0.33433333333333415,
+      "raw_reward_mean": 2.0958750000000035,
+      "features": {
+        "calculation_error": 0.575,
+        "citation_consistency_score": 0.636875,
+        "citation_precision": 0.945,
+        "exact_match": 0.3275,
+        "fabricated_number": 0.55,
+        "faithfulness_proxy": 0.4125,
+        "forced_answer": 0.0025,
+        "format_error": 0.0,
+        "generic_answer": 0.0,
+        "json_valid": 1.0,
+        "numeric_exact_match": 0.12,
+        "over_refusal": 0.0125,
+        "schema_error": 0.005,
+        "schema_pass": 0.995,
+        "unsupported_claim": 0.5575,
+        "wrong_citation": 0.03
+      }
+    },
+    "sft": {
+      "count": 400,
+      "reward_mean": 0.3237083333333344,
+      "raw_reward_mean": 2.0261250000000035,
+      "features": {
+        "calculation_error": 0.575,
+        "citation_consistency_score": 0.633125,
+        "citation_precision": 0.895,
+        "exact_match": 0.33,
+        "fabricated_number": 0.535,
+        "faithfulness_proxy": 0.42,
+        "forced_answer": 0.0025,
+        "format_error": 0.0,
+        "generic_answer": 0.0,
+        "json_valid": 1.0,
+        "numeric_exact_match": 0.12,
+        "over_refusal": 0.01,
+        "schema_error": 0.0075,
+        "schema_pass": 0.9925,
+        "unsupported_claim": 0.54,
+        "wrong_citation": 0.0825
+      }
+    }
+  },
+  "pairwise_reward_win_matrix": {
+    "base": {
+      "sft": {
+        "comparable": 400,
+        "win_rate": 0.0675,
+        "tie_rate": 0.1375
+      },
+      "dpo_v1_s500": {
+        "comparable": 400,
+        "win_rate": 0.0775,
+        "tie_rate": 0.125
+      },
+      "dpo_v2_s50": {
+        "comparable": 400,
+        "win_rate": 0.065,
+        "tie_rate": 0.135
+      },
+      "dpo_v2_s100": {
+        "comparable": 400,
+        "win_rate": 0.0725,
+        "tie_rate": 0.1325
+      },
+      "dpo_v3_s100": {
+        "comparable": 400,
+        "win_rate": 0.0675,
+        "tie_rate": 0.1375
+      }
+    },
+    "sft": {
+      "base": {
+        "comparable": 400,
+        "win_rate": 0.795,
+        "tie_rate": 0.1375
+      },
+      "dpo_v1_s500": {
+        "comparable": 400,
+        "win_rate": 0.125,
+        "tie_rate": 0.7825
+      },
+      "dpo_v2_s50": {
+        "comparable": 400,
+        "win_rate": 0.04,
+        "tie_rate": 0.8825
+      },
+      "dpo_v2_s100": {
+        "comparable": 400,
+        "win_rate": 0.0525,
+        "tie_rate": 0.8775
+      },
+      "dpo_v3_s100": {
+        "comparable": 400,
+        "win_rate": 0.045,
+        "tie_rate": 0.8875
+      }
+    },
+    "dpo_v1_s500": {
+      "base": {
+        "comparable": 400,
+        "win_rate": 0.7975,
+        "tie_rate": 0.125
+      },
+      "sft": {
+        "comparable": 400,
+        "win_rate": 0.0925,
+        "tie_rate": 0.7825
+      },
+      "dpo_v2_s50": {
+        "comparable": 400,
+        "win_rate": 0.04,
+        "tie_rate": 0.85
+      },
+      "dpo_v2_s100": {
+        "comparable": 400,
+        "win_rate": 0.045,
+        "tie_rate": 0.855
+      },
+      "dpo_v3_s100": {
+        "comparable": 400,
+        "win_rate": 0.04,
+        "tie_rate": 0.8625
+      }
+    },
+    "dpo_v2_s50": {
+      "base": {
+        "comparable": 400,
+        "win_rate": 0.8,
+        "tie_rate": 0.135
+      },
+      "sft": {
+        "comparable": 400,
+        "win_rate": 0.0775,
+        "tie_rate": 0.8825
+      },
+      "dpo_v1_s500": {
+        "comparable": 400,
+        "win_rate": 0.11,
+        "tie_rate": 0.85
+      },
+      "dpo_v2_s100": {
+        "comparable": 400,
+        "win_rate": 0.0225,
+        "tie_rate": 0.975
+      },
+      "dpo_v3_s100": {
+        "comparable": 400,
+        "win_rate": 0.0275,
+        "tie_rate": 0.9625
+      }
+    },
+    "dpo_v2_s100": {
+      "base": {
+        "comparable": 400,
+        "win_rate": 0.795,
+        "tie_rate": 0.1325
+      },
+      "sft": {
+        "comparable": 400,
+        "win_rate": 0.07,
+        "tie_rate": 0.8775
+      },
+      "dpo_v1_s500": {
+        "comparable": 400,
+        "win_rate": 0.1,
+        "tie_rate": 0.855
+      },
+      "dpo_v2_s50": {
+        "comparable": 400,
+        "win_rate": 0.0025,
+        "tie_rate": 0.975
+      },
+      "dpo_v3_s100": {
+        "comparable": 400,
+        "win_rate": 0.0125,
+        "tie_rate": 0.9725
+      }
+    },
+    "dpo_v3_s100": {
+      "base": {
+        "comparable": 400,
+        "win_rate": 0.795,
+        "tie_rate": 0.1375
+      },
+      "sft": {
+        "comparable": 400,
+        "win_rate": 0.0675,
+        "tie_rate": 0.8875
+      },
+      "dpo_v1_s500": {
+        "comparable": 400,
+        "win_rate": 0.0975,
+        "tie_rate": 0.8625
+      },
+      "dpo_v2_s50": {
+        "comparable": 400,
+        "win_rate": 0.01,
+        "tie_rate": 0.9625
+      },
+      "dpo_v2_s100": {
+        "comparable": 400,
+        "win_rate": 0.015,
+        "tie_rate": 0.9725
+      }
+    }
+  },
+  "notes": [
+    "Rewards are transparent rule rewards, not learned human preference rewards.",
+    "group_relative_advantage can be used as a GRPO-style diagnostic over multiple model responses per prompt.",
+    "Use this report to inspect reward hacking before running online PPO/GRPO training."
+  ]
+}

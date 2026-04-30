@@ -93,3 +93,25 @@ badcase audit
 主动讲负结果。
 强调数据质量和评测闭环。
 ```
+
+## RL 后训练补充
+
+```text
+新增能力：rule reward + offline group-relative advantage analysis
+reward best: DPO v2 s50, reward mean 0.3387
+DPO v2 s50 vs SFT reward tie_rate: 88.25%
+用途：作为 GRPO-style 诊断，分析 PPO/GRPO 前的 reward hacking 风险
+```
+
+被问到 rule reward 怎么设计：
+
+```text
+正向项包括 JSON/schema、EM、numeric EM、faithfulness proxy、citation precision、citation consistency。
+惩罚项包括 wrong citation、unsupported claim、fabricated number、calculation error、over-refusal、forced-answer。
+```
+
+被问到怎么防 reward hacking：
+
+```text
+不能只看 reward mean，要同时 gate EM、numeric EM、schema_pass、citation precision、wrong-citation、over-refusal、forced-answer 和 KL。
+```

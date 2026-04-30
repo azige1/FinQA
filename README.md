@@ -46,6 +46,7 @@ v4 targeted DPO 没有打过 v2，尤其 citation precision 从 95.75% 掉到 67
 4. 完成 QLoRA SFT、多版本 DPO、checkpoint sweep 和 held-out eval。
 5. 设计 citation / numeric / answerability 细粒度指标，不只看 EM。
 6. 通过 v4 负结果分析展示 DPO preference data 的 tradeoff。
+7. 新增 rule-reward / group-relative advantage 分析，为 PPO/GRPO 后训练扩展做准备。
 ```
 
 ## 方法链路
@@ -100,9 +101,12 @@ docs/final_resume_bullets_zh.md              简历 bullet
 docs/application_package_zh.md               投递材料包
 docs/interview_script.md                     中文面试讲稿
 docs/interview_flashcards_zh.md              面试速记卡
+docs/rl_posttraining_plan.md                 RL-style 后训练扩展计划
+reports/rl_offline_reward_report.md          Offline rule reward 分析报告
 reports/final_metrics_comparison.png         核心结果图
 scripts/build_dpo_targeted_v4.py             v4 targeted pair 构建脚本
 scripts/run_dpo_v4_targeted_sweep_a10040.sh  v4 sweep 运行脚本
+scripts/analyze_offline_rewards.py           Rule reward / advantage 分析脚本
 ```
 
 ## 本地数据构建

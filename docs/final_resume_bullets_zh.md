@@ -53,3 +53,13 @@ v4 best Citation Precision: 67.50%
 可以说：后训练、偏好学习、评测、错误分析、负结果消融。
 不要说：金融大模型、完整 RAG、生产系统、DPO 全面超过 SFT。
 ```
+
+## 后训练/RL 方向强化版
+
+```text
+- 构建金融报告 grounded QA 后训练 pipeline，覆盖 QLoRA SFT、DPO preference learning、rule-reward 设计和 offline group-relative advantage 分析，形成 SFT -> DPO -> RL-style post-training 的实验闭环。
+
+- 设计 grounded QA rule reward，将 JSON/schema、exact match、numeric match、citation consistency、wrong citation、fabricated number、over-refusal 与 forced-answer 纳入 reward，并对 Base/SFT/DPO 多策略输出计算 GRPO-style group-relative advantage。
+
+- 在 400 条 held-out eval 上，SFT 将 Base EM 从 19.75% 提升至 33.00%；DPO v2 checkpoint-50 达到最高 rule reward mean 0.3387、95.75% citation precision 和 3.00% wrong-citation rate，并通过 v4/RL reward analysis 分析 reward hacking 与 DPO tradeoff。
+```

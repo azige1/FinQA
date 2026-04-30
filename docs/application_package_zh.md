@@ -137,3 +137,21 @@ GitHub README 首页能看到核心结果和图表。
 能主动解释 v4 负结果，而不是回避失败实验。
 能说明 proxy metric 的局限性。
 ```
+
+## 8. 后训练/RL 方向补充材料
+
+简历可用 Bullet：
+
+```text
+- 构建金融报告 grounded QA 后训练 pipeline，覆盖 QLoRA SFT、DPO preference learning、rule-reward 设计和 offline group-relative advantage 分析，形成 SFT -> DPO -> RL-style post-training 的实验闭环。
+
+- 设计 grounded QA rule reward，将 JSON/schema、exact match、numeric match、citation consistency、wrong citation、fabricated number、over-refusal 与 forced-answer 纳入 reward，并对 Base/SFT/DPO 多策略输出计算 GRPO-style group-relative advantage。
+
+- 在 400 条 held-out eval 上，SFT 将 Base EM 从 19.75% 提升至 33.00%；DPO v2 checkpoint-50 达到最高 rule reward mean 0.3387、95.75% citation precision 和 3.00% wrong-citation rate，并通过 v4/RL reward analysis 分析 reward hacking 与 DPO tradeoff。
+```
+
+面试补充说法：
+
+```text
+在 DPO 之后，我还做了 RL-style extension。我设计了一个透明的 grounded QA rule reward，把 JSON/schema、EM、numeric EM、citation consistency、wrong citation、fabricated number、over-refusal 和 forced-answer 都纳入 reward。然后对 Base/SFT/DPO 多个策略在同一批 held-out prompts 上的输出做 offline reward analysis，计算 group-relative advantage，作为 GRPO-style 诊断。结果 DPO v2 s50 的 reward mean 最高，但它和 SFT 在 88.25% prompts 上 reward tie，所以后续 PPO/GRPO 必须控制 KL 和 reward hacking，而不能只让 citation reward 上升。
+```
